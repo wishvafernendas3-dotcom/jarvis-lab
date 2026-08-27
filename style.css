@@ -1,11 +1,342 @@
-/* =====================================
-   JARVIS IRON-MAN HUD UPGRADE
-===================================== */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap');
 
-/* ENTER LAB - IRON MAN STYLE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #030303;
+  color: #fff;
+  font-family: 'Orbitron', sans-serif;
+  overflow-x: hidden;
+}
+
+/* =========================
+   TOP BAR
+========================= */
+
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 78px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 6%;
+
+  background: rgba(3,3,3,.94);
+  border-bottom: 2px solid #ff2020;
+
+  box-shadow: 0 0 25px rgba(255,0,0,.35);
+
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: 3px;
+
+  text-shadow:
+    0 0 10px #fff,
+    0 0 20px rgba(255,255,255,.4);
+}
+
+.logo span {
+  color: #ff2020;
+
+  text-shadow:
+    0 0 10px red,
+    0 0 25px red;
+}
+
+nav {
+  display: flex;
+  gap: 30px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 2px;
+
+  transition: .3s;
+}
+
+nav a:hover {
+  color: #ff2020;
+  text-shadow: 0 0 15px red;
+}
+
+/* =========================
+   MAIN
+========================= */
+
+main {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 35%,
+      rgba(255,30,0,.18),
+      transparent 35%
+    ),
+    linear-gradient(
+      #080000,
+      #030303 80%
+    );
+}
+
+/* =========================
+   GRID
+========================= */
+
+.grid {
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(255,0,0,.12) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255,0,0,.12) 1px,
+      transparent 1px
+    );
+
+  background-size: 65px 65px;
+
+  opacity: .6;
+
+  pointer-events: none;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  position: relative;
+
+  min-height: 100vh;
+
+  padding-top: 130px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+}
+
+/* =========================
+   ARC CORE
+========================= */
+
+.core {
+  position: relative;
+
+  width: 430px;
+  height: 430px;
+
+  margin-top: 30px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    radial-gradient(
+      circle,
+      #fff 0%,
+      #ffb000 8%,
+      #ff4500 18%,
+      #400000 38%,
+      #120000 60%,
+      #030303 70%
+    );
+
+  border: 8px solid #ff2020;
+
+  box-shadow:
+    0 0 15px #ff2020,
+    0 0 40px red,
+    0 0 90px rgba(255,0,0,.8),
+    inset 0 0 40px #ff4500;
+
+  animation: corePulse 2s infinite alternate;
+}
+
+/* Outer golden ring */
+
+.core::before {
+  content: "";
+
+  position: absolute;
+
+  width: 330px;
+  height: 330px;
+
+  border-radius: 50%;
+
+  border: 28px solid rgba(255,170,0,.45);
+
+  box-shadow:
+    0 0 20px #ffae00,
+    inset 0 0 20px #ff6500;
+}
+
+/* Inner ring */
+
+.core::after {
+  content: "";
+
+  position: absolute;
+
+  width: 220px;
+  height: 220px;
+
+  border-radius: 50%;
+
+  border: 12px dashed #ffc400;
+
+  box-shadow:
+    0 0 20px #ff9d00;
+  
+  animation: rotateRing 8s linear infinite;
+}
+
+.core-light {
+  position: relative;
+
+  width: 145px;
+  height: 145px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    radial-gradient(
+      circle,
+      #fff,
+      #fff6b0 15%,
+      #ff8500 45%,
+      #ff2500 75%
+    );
+
+  color: white;
+
+  font-size: 100px;
+  font-weight: 800;
+
+  z-index: 5;
+
+  text-shadow:
+    0 0 10px white,
+    0 0 25px white,
+    0 0 50px #ff9d00;
+
+  box-shadow:
+    0 0 20px white,
+    0 0 50px #ff6500,
+    0 0 100px red;
+}
+
+/* =========================
+   STATUS
+========================= */
+
+.status {
+  margin-top: 45px;
+
+  color: #ffc400;
+
+  font-size: 19px;
+
+  letter-spacing: 6px;
+
+  text-shadow:
+    0 0 10px #ffae00,
+    0 0 25px #ff6500;
+}
+
+.status::first-letter {
+  color: red;
+}
+
+/* =========================
+   HERO TITLE
+========================= */
+
+.hero h1 {
+  margin-top: 45px;
+
+  font-size: clamp(55px, 8vw, 105px);
+
+  line-height: .95;
+
+  font-weight: 900;
+
+  letter-spacing: 2px;
+
+  text-shadow:
+    0 0 8px white,
+    0 0 25px rgba(255,255,255,.6);
+}
+
+.hero h1 span {
+  color: #ff2020;
+
+  text-shadow:
+    0 0 10px red,
+    0 0 30px red,
+    0 0 60px rgba(255,0,0,.7);
+}
+
+/* =========================
+   SUBTITLE
+========================= */
+
+.subtitle {
+  margin-top: 35px;
+
+  color: #e6bd58;
+
+  font-size: 18px;
+
+  letter-spacing: 2px;
+
+  text-shadow:
+    0 0 10px rgba(255,180,0,.6);
+}
+
+/* =========================
+   ENTER BUTTON
+========================= */
 
 #enterBtn {
   position: relative;
+
   width: 360px;
   height: 82px;
 
@@ -25,6 +356,7 @@
   color: #ffd45c;
 
   font-family: 'Orbitron', sans-serif;
+
   font-size: 21px;
   font-weight: 700;
 
@@ -39,8 +371,6 @@
 
   transition: .3s;
 }
-
-/* CORNER EFFECT */
 
 #enterBtn::before,
 #enterBtn::after {
@@ -69,22 +399,10 @@
   border-width: 0 3px 3px 0;
 }
 
-/* BUTTON HOVER */
-
 #enterBtn:hover {
   transform: scale(1.05);
 
   color: white;
-
-  border-color: #ff3b3b;
-
-  background:
-    linear-gradient(
-      90deg,
-      rgba(255,0,0,.25),
-      rgba(255,80,0,.45),
-      rgba(255,0,0,.25)
-    );
 
   box-shadow:
     0 0 20px red,
@@ -93,64 +411,16 @@
     inset 0 0 30px red;
 }
 
-/* =====================================
-   HUD LINES
-===================================== */
-
-.hero::before {
-  content: "";
-
-  position: absolute;
-
-  top: 40px;
-  left: 5%;
-
-  width: 90%;
-  height: 1px;
-
-  background: linear-gradient(
-    90deg,
-    transparent,
-    #ff2020,
-    transparent
-  );
-
-  box-shadow: 0 0 10px red;
-
-  opacity: .7;
-}
-
-.hero::after {
-  content: "";
-
-  position: absolute;
-
-  bottom: 30px;
-  left: 10%;
-
-  width: 80%;
-  height: 1px;
-
-  background: linear-gradient(
-    90deg,
-    transparent,
-    #ff8c00,
-    transparent
-  );
-
-  opacity: .5;
-}
-
-/* =====================================
-   IRON MAN HUD CORNERS
-===================================== */
+/* =========================
+   HUD CORNERS
+========================= */
 
 main::before {
   content: "";
 
   position: absolute;
 
-  top: 100px;
+  top: 105px;
   left: 15px;
 
   width: 70px;
@@ -168,7 +438,7 @@ main::after {
 
   position: absolute;
 
-  top: 100px;
+  top: 105px;
   right: 15px;
 
   width: 70px;
@@ -181,14 +451,62 @@ main::after {
     5px -5px 15px rgba(255,0,0,.5);
 }
 
-/* =====================================
-   PROJECT CARDS - HUD STYLE
-===================================== */
+/* =========================
+   SECTIONS
+========================= */
+
+.section {
+  position: relative;
+
+  padding: 120px 7%;
+
+  background:
+    linear-gradient(
+      rgba(20,0,0,.9),
+      #030303
+    );
+}
+
+.label {
+  color: #ff2020;
+
+  font-size: 14px;
+
+  letter-spacing: 4px;
+
+  margin-bottom: 20px;
+}
+
+.section h2 {
+  font-size: 50px;
+
+  margin-bottom: 50px;
+
+  text-shadow:
+    0 0 15px white;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.cards {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 25px;
+}
 
 .card {
   position: relative;
 
   overflow: hidden;
+
+  padding: 35px;
+
+  min-height: 220px;
 
   border: 1px solid #6d0000;
 
@@ -198,6 +516,8 @@ main::after {
       rgba(80,0,0,.5),
       rgba(5,5,5,.95)
     );
+
+  transition: .3s;
 }
 
 .card::before {
@@ -213,8 +533,7 @@ main::after {
 
   background: #ff2020;
 
-  box-shadow:
-    0 0 15px red;
+  box-shadow: 0 0 15px red;
 }
 
 .card::after {
@@ -233,30 +552,190 @@ main::after {
 }
 
 .card:hover {
+  transform: translateY(-8px);
+
   border-color: #ff2020;
 
   box-shadow:
-    0 0 20px rgba(255,0,0,.4),
+    0 0 25px rgba(255,0,0,.5),
     inset 0 0 25px rgba(255,0,0,.1);
 }
 
-/* =====================================
+.icon {
+  font-size: 45px;
+
+  margin-bottom: 20px;
+
+  filter:
+    drop-shadow(0 0 10px red);
+}
+
+.card h3 {
+  color: #ff3030;
+
+  font-size: 23px;
+
+  margin-bottom: 15px;
+}
+
+.card p {
+  color: #bbb;
+
+  line-height: 1.7;
+
+  font-family: Arial, sans-serif;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about p:last-child {
+  max-width: 750px;
+
+  color: #bbb;
+
+  line-height: 2;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 18px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  padding: 35px;
+
+  text-align: center;
+
+  color: #ff3030;
+
+  background: #020202;
+
+  border-top: 1px solid #520000;
+
+  letter-spacing: 3px;
+
+  font-size: 12px;
+
+  box-shadow:
+    0 -10px 30px rgba(255,0,0,.15);
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes corePulse {
+  from {
+    box-shadow:
+      0 0 15px #ff2020,
+      0 0 40px red,
+      0 0 70px rgba(255,0,0,.5),
+      inset 0 0 30px #ff4500;
+  }
+
+  to {
+    box-shadow:
+      0 0 25px #ff2020,
+      0 0 65px red,
+      0 0 120px rgba(255,0,0,.9),
+      inset 0 0 55px #ff4500;
+  }
+}
+
+@keyframes rotateRing {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================
    MOBILE
-===================================== */
+========================= */
 
 @media (max-width: 700px) {
+
+  .topbar {
+    height: 70px;
+
+    padding: 0 20px;
+  }
+
+  .logo {
+    font-size: 21px;
+    letter-spacing: 1px;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .hero {
+    padding-top: 105px;
+  }
+
+  .core {
+    width: 330px;
+    height: 330px;
+  }
+
+  .core::before {
+    width: 255px;
+    height: 255px;
+  }
+
+  .core::after {
+    width: 205px;
+    height: 205px;
+  }
+
+  .core-light {
+    width: 110px;
+    height: 110px;
+
+    font-size: 75px;
+  }
+
+  .status {
+    font-size: 14px;
+    letter-spacing: 4px;
+  }
+
+  .hero h1 {
+    font-size: 55px;
+  }
+
+  .subtitle {
+    padding: 0 25px;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+  }
 
   #enterBtn {
     width: 290px;
     height: 70px;
 
     font-size: 16px;
+
     letter-spacing: 4px;
   }
 
-  .hero::before {
-    width: 85%;
-    left: 7.5%;
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .section h2 {
+    font-size: 38px;
   }
 
   main::before,
