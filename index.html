@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,22 +11,22 @@
 
 <body>
 
-  <!-- TOP NAVIGATION -->
+  <!-- HUD FRAME -->
+  <div class="hud-frame"></div>
+
+  <!-- TOP BAR -->
   <header class="topbar">
 
     <div class="logo">
       JARVIS<span>LAB</span>
     </div>
 
-    <nav>
-      <a href="#home">HOME</a>
-      <a href="#projects">PROJECTS</a>
-      <a href="#about">ABOUT</a>
-    </nav>
-
     <div class="system">
-      <span>●</span> SYSTEM ONLINE
+      <span class="red-dot">●</span>
+      SYSTEM ONLINE
     </div>
+
+    <div class="menu">☰</div>
 
   </header>
 
@@ -39,120 +38,127 @@
     <div class="grid"></div>
 
 
-    <!-- HERO SECTION -->
+    <!-- SIDE HUD -->
+    <div class="hud left-hud">
+      <div class="hud-title">JARVIS</div>
+      <div class="hud-version">V2.0.0</div>
+      <div class="hud-line"></div>
+      <div class="hud-small">CORE SYSTEM</div>
+      <div class="hud-small">ACTIVE</div>
+    </div>
+
+    <div class="hud right-hud">
+      <div class="hud-title">STATUS</div>
+      <div class="status-number">100%</div>
+      <div class="hud-line"></div>
+
+      <div class="bars">
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+      </div>
+    </div>
+
+
+    <!-- HERO -->
     <section class="hero">
 
       <!-- ARC REACTOR -->
-      <div class="core">
+      <div class="reactor">
 
-        <div class="core-ring ring-one"></div>
-        <div class="core-ring ring-two"></div>
-        <div class="core-ring ring-three"></div>
+        <div class="reactor-outer"></div>
 
-        <div class="core-light">
-          J
+        <div class="reactor-ring ring-one"></div>
+
+        <div class="reactor-ring ring-two">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <div class="reactor-ring ring-three"></div>
+
+        <div class="reactor-core">
+          <div class="core-letter">J</div>
         </div>
 
       </div>
 
 
       <!-- STATUS -->
-      <p class="status">
-        ● SYSTEM ONLINE
-      </p>
+      <div class="hero-status">
+        <span>●</span> SYSTEM ONLINE
+      </div>
 
 
       <!-- TITLE -->
       <h1>
-        WELCOME TO
-        <br>
-        <span>JARVIS LAB</span>
+        WELCOME<br>
+        <small>TO</small><br>
+        <strong>JARVIS LAB</strong>
       </h1>
 
 
-      <!-- SUBTITLE -->
       <p class="subtitle">
         Exploring technology. Building the future.
       </p>
 
 
       <!-- ENTER BUTTON -->
-      <button id="enterBtn">
-        ENTER LAB ⚡
+      <button id="enterBtn" class="enter-btn">
+        ENTER LAB
+        <span>⚡</span>
       </button>
 
     </section>
 
 
-
     <!-- PROJECTS -->
     <section id="projects" class="section">
 
-      <p class="label">
+      <div class="section-label">
         01 / PROJECTS
-      </p>
+      </div>
 
-      <h2>
-        MY PROJECTS
-      </h2>
-
+      <h2>MY PROJECTS</h2>
 
       <div class="cards">
 
-        <!-- AI LAB -->
         <div class="card">
-
-          <div class="icon">
-            🤖
-          </div>
-
-          <h3>
-            AI LAB
-          </h3>
-
+          <div class="card-icon">🤖</div>
+          <h3>AI LAB</h3>
           <p>
-            Experiments with artificial intelligence
-            and automation.
+            Artificial intelligence,
+            automation and JARVIS experiments.
           </p>
-
+          <div class="card-status">● ONLINE</div>
         </div>
 
 
-        <!-- CYBER LAB -->
         <div class="card">
-
-          <div class="icon">
-            🔐
-          </div>
-
-          <h3>
-            CYBER LAB
-          </h3>
-
+          <div class="card-icon">🔐</div>
+          <h3>CYBER LAB</h3>
           <p>
-            Learning cybersecurity through safe
-            practice projects.
+            Cybersecurity learning and
+            safe digital experiments.
           </p>
-
+          <div class="card-status">● SECURE</div>
         </div>
 
 
-        <!-- FUTURE TECH -->
         <div class="card">
-
-          <div class="icon">
-            ⚡
-          </div>
-
-          <h3>
-            FUTURE TECH
-          </h3>
-
+          <div class="card-icon">⚡</div>
+          <h3>FUTURE TECH</h3>
           <p>
-            Ideas, inventions and technology
-            experiments.
+            Ideas, inventions and
+            technology experiments.
           </p>
-
+          <div class="card-status">● ACTIVE</div>
         </div>
 
       </div>
@@ -160,54 +166,91 @@
     </section>
 
 
-
     <!-- ABOUT -->
     <section id="about" class="section about">
 
-      <p class="label">
+      <div class="section-label">
         02 / ABOUT
-      </p>
+      </div>
 
-      <h2>
-        THE LAB
-      </h2>
+      <h2>THE LAB</h2>
 
       <p>
-        JARVIS LAB is my personal digital laboratory —
+        JARVIS LAB is a personal digital laboratory —
         a place to learn, build and experiment with
-        technology.
+        futuristic technology.
       </p>
+
+      <div class="terminal">
+        <span>&gt;</span> JARVIS SYSTEM INITIALIZED<br>
+        <span>&gt;</span> CORE ONLINE<br>
+        <span>&gt;</span> ALL SYSTEMS NOMINAL
+      </div>
 
     </section>
 
   </main>
 
 
+  <!-- BOTTOM HUD NAV -->
+  <nav class="bottom-nav">
+
+    <a href="#projects">
+      <span>◉</span>
+      PROJECTS
+    </a>
+
+    <a href="#projects">
+      <span>⬡</span>
+      EXPERIMENTS
+    </a>
+
+    <a href="#home">
+      <span>▣</span>
+      AI SYSTEM
+    </a>
+
+    <a href="#about">
+      <span>♙</span>
+      ABOUT
+    </a>
+
+  </nav>
+
 
   <!-- FOOTER -->
   <footer>
-    JARVIS LAB // SYSTEM ONLINE
+    JARVIS LAB // SYSTEM ONLINE // V2.0.0
   </footer>
 
 
-
-  <!-- ENTER BUTTON SCRIPT -->
+  <!-- JARVIS SCRIPT -->
   <script>
 
-    document
-      .getElementById("enterBtn")
-      .addEventListener("click", function () {
+    const enterBtn = document.getElementById("enterBtn");
 
-        document
-          .getElementById("projects")
-          .scrollIntoView({
-            behavior: "smooth"
-          });
+    enterBtn.addEventListener("click", function () {
 
-      });
+      document
+        .getElementById("projects")
+        .scrollIntoView({
+          behavior: "smooth"
+        });
+
+    });
+
+
+    // Reactor pulse effect
+    setInterval(() => {
+
+      const reactor =
+        document.querySelector(".reactor");
+
+      reactor.classList.toggle("pulse");
+
+    }, 1500);
 
   </script>
 
 </body>
-
 </html> 
