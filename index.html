@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,53 +12,44 @@
 
 <body>
 
-  <!-- TOP BAR -->
+  <!-- TOP NAVIGATION -->
   <header class="topbar">
 
     <div class="logo">
       JARVIS<span>LAB</span>
     </div>
 
+    <nav>
+      <a href="#home">HOME</a>
+      <a href="#projects">PROJECTS</a>
+      <a href="#about">ABOUT</a>
+    </nav>
+
     <div class="system">
-      <i></i>
-      SYSTEM ONLINE
+      <span>●</span> SYSTEM ONLINE
     </div>
 
   </header>
 
 
-  <!-- HERO -->
+  <!-- MAIN -->
   <main id="home">
 
+    <!-- BACKGROUND GRID -->
     <div class="grid"></div>
 
+
+    <!-- HERO SECTION -->
     <section class="hero">
 
       <!-- ARC REACTOR -->
-      <div class="reactor">
+      <div class="core">
 
-        <div class="reactor-ring outer"></div>
+        <div class="core-ring ring-one"></div>
+        <div class="core-ring ring-two"></div>
+        <div class="core-ring ring-three"></div>
 
-        <div class="reactor-ring middle"></div>
-
-        <div class="reactor-ring inner"></div>
-
-        <div class="reactor-segments">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-
-        <div class="reactor-core">
+        <div class="core-light">
           J
         </div>
 
@@ -65,26 +57,26 @@
 
 
       <!-- STATUS -->
-      <div class="status">
-        <span>●</span>
-        SYSTEM ONLINE
-      </div>
+      <p class="status">
+        ● SYSTEM ONLINE
+      </p>
 
 
       <!-- TITLE -->
       <h1>
-        WELCOME<br>
-        <small>TO</small><br>
-        <strong>JARVIS LAB</strong>
+        WELCOME TO
+        <br>
+        <span>JARVIS LAB</span>
       </h1>
 
 
+      <!-- SUBTITLE -->
       <p class="subtitle">
         Exploring technology. Building the future.
       </p>
 
 
-      <!-- BUTTON -->
+      <!-- ENTER BUTTON -->
       <button id="enterBtn">
         ENTER LAB ⚡
       </button>
@@ -92,42 +84,75 @@
     </section>
 
 
+
     <!-- PROJECTS -->
     <section id="projects" class="section">
 
-      <div class="label">
+      <p class="label">
         01 / PROJECTS
-      </div>
+      </p>
 
-      <h2>MY PROJECTS</h2>
+      <h2>
+        MY PROJECTS
+      </h2>
+
 
       <div class="cards">
 
+        <!-- AI LAB -->
         <div class="card">
-          <div class="icon">🤖</div>
-          <h3>AI LAB</h3>
+
+          <div class="icon">
+            🤖
+          </div>
+
+          <h3>
+            AI LAB
+          </h3>
+
           <p>
             Experiments with artificial intelligence
             and automation.
           </p>
+
         </div>
 
+
+        <!-- CYBER LAB -->
         <div class="card">
-          <div class="icon">🔐</div>
-          <h3>CYBER LAB</h3>
+
+          <div class="icon">
+            🔐
+          </div>
+
+          <h3>
+            CYBER LAB
+          </h3>
+
           <p>
             Learning cybersecurity through safe
             practice projects.
           </p>
+
         </div>
 
+
+        <!-- FUTURE TECH -->
         <div class="card">
-          <div class="icon">⚡</div>
-          <h3>FUTURE TECH</h3>
+
+          <div class="icon">
+            ⚡
+          </div>
+
+          <h3>
+            FUTURE TECH
+          </h3>
+
           <p>
             Ideas, inventions and technology
             experiments.
           </p>
+
         </div>
 
       </div>
@@ -135,14 +160,17 @@
     </section>
 
 
+
     <!-- ABOUT -->
-    <section id="about" class="section">
+    <section id="about" class="section about">
 
-      <div class="label">
+      <p class="label">
         02 / ABOUT
-      </div>
+      </p>
 
-      <h2>THE LAB</h2>
+      <h2>
+        THE LAB
+      </h2>
 
       <p>
         JARVIS LAB is my personal digital laboratory —
@@ -155,12 +183,17 @@
   </main>
 
 
+
+  <!-- FOOTER -->
   <footer>
     JARVIS LAB // SYSTEM ONLINE
   </footer>
 
 
+
+  <!-- ENTER BUTTON SCRIPT -->
   <script>
+
     document
       .getElementById("enterBtn")
       .addEventListener("click", function () {
@@ -172,7 +205,9 @@
           });
 
       });
+
   </script>
 
 </body>
+
 </html> 
