@@ -1,12 +1,13 @@
-* {
+
+  * {
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
-  background: #05070a;
-  color: #eafcff;
+  background: #050505;
+  color: #fff;
   font-family: Arial, sans-serif;
   overflow-x: hidden;
 }
@@ -20,8 +21,9 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(5, 7, 10, 0.85);
+  background: rgba(5, 5, 5, 0.9);
   backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 45, 20, 0.25);
   z-index: 10;
 }
 
@@ -32,11 +34,12 @@ body {
 }
 
 .logo span {
-  color: #00eaff;
+  color: #ffd21c;
+  text-shadow: 0 0 15px #ffd21c;
 }
 
 nav a {
-  color: #b9dfe5;
+  color: #e8c95a;
   text-decoration: none;
   margin-left: 25px;
   font-size: 12px;
@@ -44,7 +47,8 @@ nav a {
 }
 
 nav a:hover {
-  color: #00eaff;
+  color: #ff3218;
+  text-shadow: 0 0 12px #ff3218;
 }
 
 .hero {
@@ -63,8 +67,8 @@ nav a:hover {
   inset: 0;
   opacity: 0.12;
   background-image:
-    linear-gradient(#00eaff 1px, transparent 1px),
-    linear-gradient(90deg, #00eaff 1px, transparent 1px);
+    linear-gradient(#ff3218 1px, transparent 1px),
+    linear-gradient(90deg, #ff3218 1px, transparent 1px);
   background-size: 45px 45px;
   transform: perspective(500px) rotateX(60deg) scale(1.8);
   transform-origin: center bottom;
@@ -74,13 +78,15 @@ nav a:hover {
 .core {
   width: 150px;
   height: 150px;
-  border: 2px solid #00eaff;
+  border: 3px solid #ff3218;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  box-shadow: 0 0 30px #00eaff;
+  box-shadow:
+    0 0 20px #ff3218,
+    0 0 45px rgba(255, 50, 24, 0.5);
   animation: pulse 2s infinite;
 }
 
@@ -88,7 +94,7 @@ nav a:hover {
   position: absolute;
   width: 115px;
   height: 115px;
-  border: 2px dashed #00eaff;
+  border: 2px dashed #ffd21c;
   border-radius: 50%;
   animation: spin 8s linear infinite;
 }
@@ -97,14 +103,17 @@ nav a:hover {
   font-size: 50px;
   font-weight: bold;
   color: #fff;
-  text-shadow: 0 0 20px #00eaff;
+  text-shadow:
+    0 0 15px #ff3218,
+    0 0 30px #ffd21c;
 }
 
 .status {
-  color: #00eaff;
+  color: #ffd21c;
   font-size: 12px;
   letter-spacing: 3px;
   margin-top: 35px;
+  text-shadow: 0 0 12px #ffd21c;
 }
 
 h1 {
@@ -115,12 +124,14 @@ h1 {
 }
 
 h1 span {
-  color: #00eaff;
-  text-shadow: 0 0 25px #00eaff;
+  color: #ff3218;
+  text-shadow:
+    0 0 15px #ff3218,
+    0 0 35px rgba(255, 50, 24, 0.6);
 }
 
 .subtitle {
-  color: #8aa8ae;
+  color: #d6bd72;
   font-size: 17px;
 }
 
@@ -128,17 +139,21 @@ button {
   margin-top: 25px;
   padding: 15px 30px;
   background: transparent;
-  color: #00eaff;
-  border: 1px solid #00eaff;
+  color: #ffd21c;
+  border: 1px solid #ffd21c;
   border-radius: 4px;
   letter-spacing: 2px;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 button:hover {
-  background: #00eaff;
-  color: #05070a;
-  box-shadow: 0 0 25px #00eaff;
+  background: #ff3218;
+  color: #fff;
+  border-color: #ff3218;
+  box-shadow:
+    0 0 20px #ff3218,
+    0 0 40px rgba(255, 50, 24, 0.5);
 }
 
 .section {
@@ -148,14 +163,16 @@ button:hover {
 }
 
 .label {
-  color: #00eaff;
+  color: #ffd21c;
   letter-spacing: 3px;
   font-size: 12px;
+  text-shadow: 0 0 10px #ffd21c;
 }
 
 h2 {
   font-size: 45px;
   margin-top: 10px;
+  color: #fff;
 }
 
 .cards {
@@ -168,15 +185,16 @@ h2 {
   flex: 1;
   min-width: 220px;
   padding: 30px;
-  border: 1px solid #17363d;
-  background: rgba(10, 18, 22, 0.8);
+  border: 1px solid #542019;
+  background: rgba(18, 8, 6, 0.85);
   transition: 0.3s;
 }
 
 .card:hover {
   transform: translateY(-8px);
-  border-color: #00eaff;
-  box-shadow: 0 0 25px rgba(0, 234, 255, 0.15);
+  border-color: #ff3218;
+  box-shadow:
+    0 0 20px rgba(255, 50, 24, 0.3);
 }
 
 .icon {
@@ -184,13 +202,14 @@ h2 {
 }
 
 .card h3 {
-  color: #00eaff;
+  color: #ffd21c;
   letter-spacing: 2px;
+  text-shadow: 0 0 10px rgba(255, 210, 28, 0.5);
 }
 
 .card p,
 .about > p:last-child {
-  color: #8aa8ae;
+  color: #c8b67c;
   line-height: 1.7;
 }
 
@@ -201,7 +220,7 @@ h2 {
 footer {
   padding: 30px;
   text-align: center;
-  color: #52747b;
+  color: #806c35;
   font-size: 11px;
   letter-spacing: 2px;
 }
@@ -214,7 +233,9 @@ footer {
 
 @keyframes pulse {
   50% {
-    box-shadow: 0 0 55px #00eaff;
+    box-shadow:
+      0 0 35px #ff3218,
+      0 0 65px rgba(255, 210, 28, 0.35);
   }
 }
 
