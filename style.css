@@ -17,39 +17,48 @@ body {
   overflow-x: hidden;
 }
 
-/* =========================
+/* ================================
    TOP BAR
-========================= */
+================================ */
 
 .topbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 78px;
+  height: 80px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  padding: 0 6%;
+  padding: 0 45px;
 
-  background: rgba(3,3,3,.94);
+  background:
+    linear-gradient(
+      90deg,
+      #050505,
+      #160000,
+      #050505
+    );
+
   border-bottom: 2px solid #ff2020;
 
-  box-shadow: 0 0 25px rgba(255,0,0,.35);
+  box-shadow:
+    0 0 15px rgba(255,0,0,.5);
 
   z-index: 1000;
 }
 
+/* LOGO */
+
 .logo {
-  font-size: 32px;
+  font-size: 30px;
   font-weight: 800;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
 
   text-shadow:
-    0 0 10px #fff,
-    0 0 20px rgba(255,255,255,.4);
+    0 0 10px white;
 }
 
 .logo span {
@@ -60,15 +69,18 @@ body {
     0 0 25px red;
 }
 
+/* NAV */
+
 nav {
   display: flex;
   gap: 30px;
 }
 
 nav a {
-  color: #fff;
+  color: #ddd;
   text-decoration: none;
-  font-size: 13px;
+
+  font-size: 14px;
   letter-spacing: 2px;
 
   transition: .3s;
@@ -76,33 +88,35 @@ nav a {
 
 nav a:hover {
   color: #ff2020;
-  text-shadow: 0 0 15px red;
+
+  text-shadow:
+    0 0 10px red;
 }
 
-/* =========================
+/* ================================
    MAIN
-========================= */
+================================ */
 
 main {
   position: relative;
   min-height: 100vh;
-  overflow: hidden;
 
   background:
     radial-gradient(
       circle at 50% 35%,
-      rgba(255,30,0,.18),
+      rgba(255,40,0,.25),
       transparent 35%
     ),
     linear-gradient(
-      #080000,
-      #030303 80%
+      180deg,
+      #180000,
+      #050505 70%
     );
+
+  overflow: hidden;
 }
 
-/* =========================
-   GRID
-========================= */
+/* GRID */
 
 .grid {
   position: absolute;
@@ -110,43 +124,51 @@ main {
 
   background-image:
     linear-gradient(
-      rgba(255,0,0,.12) 1px,
+      rgba(255,0,0,.15) 1px,
       transparent 1px
     ),
     linear-gradient(
       90deg,
-      rgba(255,0,0,.12) 1px,
+      rgba(255,0,0,.15) 1px,
       transparent 1px
     );
 
-  background-size: 65px 65px;
+  background-size: 60px 60px;
 
-  opacity: .6;
+  mask-image:
+    linear-gradient(
+      to bottom,
+      black,
+      transparent
+    );
 
   pointer-events: none;
 }
 
-/* =========================
+/* ================================
    HERO
-========================= */
+================================ */
 
 .hero {
   position: relative;
 
   min-height: 100vh;
 
-  padding-top: 130px;
+  padding-top: 120px;
 
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 
   text-align: center;
+
+  z-index: 2;
 }
 
-/* =========================
+/* ================================
    ARC CORE
-========================= */
+================================ */
 
 .core {
   position: relative;
@@ -154,80 +176,67 @@ main {
   width: 430px;
   height: 430px;
 
-  margin-top: 30px;
-
-  border-radius: 50%;
-
   display: flex;
   align-items: center;
   justify-content: center;
 
-  background:
-    radial-gradient(
-      circle,
-      #fff 0%,
-      #ffb000 8%,
-      #ff4500 18%,
-      #400000 38%,
-      #120000 60%,
-      #030303 70%
-    );
+  margin-bottom: 40px;
+}
+
+.core-ring {
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  border-radius: 50%;
 
   border: 8px solid #ff2020;
 
   box-shadow:
     0 0 15px #ff2020,
     0 0 40px red,
-    0 0 90px rgba(255,0,0,.8),
-    inset 0 0 40px #ff4500;
+    0 0 80px rgba(255,0,0,.8),
+    inset 0 0 25px red;
 
-  animation: corePulse 2s infinite alternate;
+  animation: reactorPulse 2s infinite alternate;
 }
 
-/* Outer golden ring */
-
-.core::before {
+.core-ring::before {
   content: "";
 
   position: absolute;
 
-  width: 330px;
-  height: 330px;
+  inset: 35px;
 
   border-radius: 50%;
 
-  border: 28px solid rgba(255,170,0,.45);
+  border: 25px solid #9b6500;
 
   box-shadow:
-    0 0 20px #ffae00,
-    inset 0 0 20px #ff6500;
+    0 0 20px #ffb000,
+    inset 0 0 25px #ff6a00;
 }
 
-/* Inner ring */
-
-.core::after {
+.core-ring::after {
   content: "";
 
   position: absolute;
 
-  width: 220px;
-  height: 220px;
+  inset: 90px;
 
   border-radius: 50%;
 
-  border: 12px dashed #ffc400;
+  border: 10px dashed #ffc400;
 
-  box-shadow:
-    0 0 20px #ff9d00;
-  
-  animation: rotateRing 8s linear infinite;
+  animation: rotate 8s linear infinite;
 }
 
 .core-light {
   position: relative;
 
-  width: 145px;
-  height: 145px;
+  width: 190px;
+  height: 190px;
 
   border-radius: 50%;
 
@@ -235,73 +244,62 @@ main {
   align-items: center;
   justify-content: center;
 
+  font-size: 110px;
+  font-weight: 900;
+
+  color: white;
+
   background:
     radial-gradient(
       circle,
       #fff,
-      #fff6b0 15%,
-      #ff8500 45%,
-      #ff2500 75%
+      #ffb000 30%,
+      #ff3500 65%,
+      #5c0000
     );
 
-  color: white;
-
-  font-size: 100px;
-  font-weight: 800;
-
-  z-index: 5;
-
-  text-shadow:
-    0 0 10px white,
-    0 0 25px white,
-    0 0 50px #ff9d00;
+  border: 8px solid #ff4b00;
 
   box-shadow:
     0 0 20px white,
-    0 0 50px #ff6500,
+    0 0 50px #ff6a00,
     0 0 100px red;
 }
 
-/* =========================
+/* ================================
    STATUS
-========================= */
+================================ */
 
 .status {
-  margin-top: 45px;
-
   color: #ffc400;
 
-  font-size: 19px;
+  font-size: 18px;
 
-  letter-spacing: 6px;
+  letter-spacing: 7px;
+
+  margin-bottom: 35px;
 
   text-shadow:
-    0 0 10px #ffae00,
-    0 0 25px #ff6500;
+    0 0 10px #ffb000;
 }
 
-.status::first-letter {
+.status:first-letter {
   color: red;
 }
 
-/* =========================
-   HERO TITLE
-========================= */
+/* ================================
+   TITLE
+================================ */
 
 .hero h1 {
-  margin-top: 45px;
+  font-size: 65px;
 
-  font-size: clamp(55px, 8vw, 105px);
-
-  line-height: .95;
+  line-height: 1.05;
 
   font-weight: 900;
 
-  letter-spacing: 2px;
-
   text-shadow:
-    0 0 8px white,
-    0 0 25px rgba(255,255,255,.6);
+    0 0 15px rgba(255,255,255,.7);
 }
 
 .hero h1 span {
@@ -310,29 +308,24 @@ main {
   text-shadow:
     0 0 10px red,
     0 0 30px red,
-    0 0 60px rgba(255,0,0,.7);
+    0 0 60px rgba(255,0,0,.8);
 }
 
-/* =========================
-   SUBTITLE
-========================= */
+/* SUBTITLE */
 
 .subtitle {
-  margin-top: 35px;
+  margin-top: 30px;
 
-  color: #e6bd58;
+  color: #e4bd55;
 
   font-size: 18px;
 
   letter-spacing: 2px;
-
-  text-shadow:
-    0 0 10px rgba(255,180,0,.6);
 }
 
-/* =========================
+/* ================================
    ENTER BUTTON
-========================= */
+================================ */
 
 #enterBtn {
   position: relative;
@@ -343,6 +336,7 @@ main {
   margin-top: 55px;
 
   border: 3px solid #ff2020;
+
   border-radius: 8px;
 
   background:
@@ -411,59 +405,20 @@ main {
     inset 0 0 30px red;
 }
 
-/* =========================
-   HUD CORNERS
-========================= */
-
-main::before {
-  content: "";
-
-  position: absolute;
-
-  top: 105px;
-  left: 15px;
-
-  width: 70px;
-  height: 70px;
-
-  border-left: 2px solid #ff2020;
-  border-top: 2px solid #ff2020;
-
-  box-shadow:
-    -5px -5px 15px rgba(255,0,0,.5);
-}
-
-main::after {
-  content: "";
-
-  position: absolute;
-
-  top: 105px;
-  right: 15px;
-
-  width: 70px;
-  height: 70px;
-
-  border-right: 2px solid #ff2020;
-  border-top: 2px solid #ff2020;
-
-  box-shadow:
-    5px -5px 15px rgba(255,0,0,.5);
-}
-
-/* =========================
+/* ================================
    SECTIONS
-========================= */
+================================ */
 
 .section {
   position: relative;
 
-  padding: 120px 7%;
+  padding: 120px 8%;
 
   background:
     linear-gradient(
-      rgba(20,0,0,.9),
-      #030303
+      180deg,
+      #050505,
+      #100000
     );
 }
 
@@ -478,17 +433,17 @@ main::after {
 }
 
 .section h2 {
-  font-size: 50px;
+  font-size: 45px;
 
   margin-bottom: 50px;
 
   text-shadow:
-    0 0 15px white;
+    0 0 15px rgba(255,255,255,.4);
 }
 
-/* =========================
+/* ================================
    CARDS
-========================= */
+================================ */
 
 .cards {
   display: grid;
@@ -502,11 +457,11 @@ main::after {
 .card {
   position: relative;
 
-  overflow: hidden;
-
   padding: 35px;
 
-  min-height: 220px;
+  min-height: 230px;
+
+  overflow: hidden;
 
   border: 1px solid #6d0000;
 
@@ -529,11 +484,12 @@ main::after {
   left: 0;
 
   width: 100%;
-  height: 2px;
+  height: 3px;
 
   background: #ff2020;
 
-  box-shadow: 0 0 15px red;
+  box-shadow:
+    0 0 15px red;
 }
 
 .card::after {
@@ -562,18 +518,15 @@ main::after {
 }
 
 .icon {
-  font-size: 45px;
+  font-size: 40px;
 
   margin-bottom: 20px;
-
-  filter:
-    drop-shadow(0 0 10px red);
 }
 
 .card h3 {
   color: #ff3030;
 
-  font-size: 23px;
+  font-size: 22px;
 
   margin-bottom: 15px;
 }
@@ -583,71 +536,42 @@ main::after {
 
   line-height: 1.7;
 
-  font-family: Arial, sans-serif;
+  font-size: 14px;
 }
 
-/* =========================
-   ABOUT
-========================= */
+/* ABOUT */
 
 .about p:last-child {
   max-width: 750px;
 
   color: #bbb;
 
-  line-height: 2;
-
-  font-family: Arial, sans-serif;
-
-  font-size: 18px;
+  line-height: 1.8;
 }
 
-/* =========================
+/* ================================
    FOOTER
-========================= */
+================================ */
 
 footer {
-  padding: 35px;
+  padding: 30px;
 
   text-align: center;
 
-  color: #ff3030;
+  background: #030303;
 
-  background: #020202;
-
-  border-top: 1px solid #520000;
+  color: #ff2020;
 
   letter-spacing: 3px;
 
-  font-size: 12px;
-
-  box-shadow:
-    0 -10px 30px rgba(255,0,0,.15);
+  border-top: 1px solid #550000;
 }
 
-/* =========================
+/* ================================
    ANIMATIONS
-========================= */
+================================ */
 
-@keyframes corePulse {
-  from {
-    box-shadow:
-      0 0 15px #ff2020,
-      0 0 40px red,
-      0 0 70px rgba(255,0,0,.5),
-      inset 0 0 30px #ff4500;
-  }
-
-  to {
-    box-shadow:
-      0 0 25px #ff2020,
-      0 0 65px red,
-      0 0 120px rgba(255,0,0,.9),
-      inset 0 0 55px #ff4500;
-  }
-}
-
-@keyframes rotateRing {
+@keyframes rotate {
   from {
     transform: rotate(0deg);
   }
@@ -657,21 +581,30 @@ footer {
   }
 }
 
-/* =========================
+@keyframes reactorPulse {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.025);
+  }
+}
+
+/* ================================
    MOBILE
-========================= */
+================================ */
 
 @media (max-width: 700px) {
 
   .topbar {
     height: 70px;
 
-    padding: 0 20px;
+    padding: 0 18px;
   }
 
   .logo {
-    font-size: 21px;
-    letter-spacing: 1px;
+    font-size: 22px;
   }
 
   nav {
@@ -679,46 +612,35 @@ footer {
   }
 
   .hero {
-    padding-top: 105px;
+    padding-top: 100px;
   }
 
   .core {
-    width: 330px;
-    height: 330px;
-  }
-
-  .core::before {
-    width: 255px;
-    height: 255px;
-  }
-
-  .core::after {
-    width: 205px;
-    height: 205px;
+    width: 350px;
+    height: 350px;
   }
 
   .core-light {
-    width: 110px;
-    height: 110px;
+    width: 145px;
+    height: 145px;
 
-    font-size: 75px;
+    font-size: 80px;
+  }
+
+  .hero h1 {
+    font-size: 50px;
   }
 
   .status {
     font-size: 14px;
-    letter-spacing: 4px;
-  }
 
-  .hero h1 {
-    font-size: 55px;
+    letter-spacing: 5px;
   }
 
   .subtitle {
-    padding: 0 25px;
+    font-size: 15px;
 
-    font-size: 14px;
-
-    line-height: 1.7;
+    padding: 0 20px;
   }
 
   #enterBtn {
@@ -734,13 +656,7 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  .section h2 {
-    font-size: 38px;
-  }
-
-  main::before,
-  main::after {
-    width: 40px;
-    height: 40px;
+  .section {
+    padding: 80px 20px;
   }
 } 
