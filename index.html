@@ -11,9 +11,6 @@
 
 <body>
 
-  <!-- HUD FRAME -->
-  <div class="hud-frame"></div>
-
   <!-- TOP BAR -->
   <header class="topbar">
 
@@ -22,11 +19,9 @@
     </div>
 
     <div class="system">
-      <span class="red-dot">●</span>
+      <span class="dot"></span>
       SYSTEM ONLINE
     </div>
-
-    <div class="menu">☰</div>
 
   </header>
 
@@ -34,65 +29,30 @@
   <!-- MAIN -->
   <main id="home">
 
-    <!-- BACKGROUND GRID -->
     <div class="grid"></div>
 
-
-    <!-- SIDE HUD -->
-    <div class="hud left-hud">
-      <div class="hud-title">JARVIS</div>
-      <div class="hud-version">V2.0.0</div>
-      <div class="hud-line"></div>
-      <div class="hud-small">CORE SYSTEM</div>
-      <div class="hud-small">ACTIVE</div>
-    </div>
-
-    <div class="hud right-hud">
-      <div class="hud-title">STATUS</div>
-      <div class="status-number">100%</div>
-      <div class="hud-line"></div>
-
-      <div class="bars">
-        <i></i>
-        <i></i>
-        <i></i>
-        <i></i>
-        <i></i>
-      </div>
-    </div>
-
-
-    <!-- HERO -->
+    <!-- ARC REACTOR -->
     <section class="hero">
 
-      <!-- ARC REACTOR -->
-      <div class="reactor">
+      <div class="core">
 
-        <div class="reactor-outer"></div>
+        <div class="outer-ring"></div>
 
-        <div class="reactor-ring ring-one"></div>
+        <div class="gold-ring"></div>
 
-        <div class="reactor-ring ring-two">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+        <div class="inner-ring"></div>
 
-        <div class="reactor-ring ring-three"></div>
-
-        <div class="reactor-core">
-          <div class="core-letter">J</div>
+        <div class="core-light">
+          J
         </div>
 
       </div>
 
 
       <!-- STATUS -->
-      <div class="hero-status">
-        <span>●</span> SYSTEM ONLINE
+      <div class="status">
+        <span>●</span>
+        SYSTEM ONLINE
       </div>
 
 
@@ -100,19 +60,19 @@
       <h1>
         WELCOME<br>
         <small>TO</small><br>
-        <strong>JARVIS LAB</strong>
+        <strong>JARVIS<br>LAB</strong>
       </h1>
 
 
+      <!-- SUBTITLE -->
       <p class="subtitle">
         Exploring technology. Building the future.
       </p>
 
 
       <!-- ENTER BUTTON -->
-      <button id="enterBtn" class="enter-btn">
-        ENTER LAB
-        <span>⚡</span>
+      <button id="enterBtn">
+        ENTER LAB ⚡
       </button>
 
     </section>
@@ -121,7 +81,7 @@
     <!-- PROJECTS -->
     <section id="projects" class="section">
 
-      <div class="section-label">
+      <div class="label">
         01 / PROJECTS
       </div>
 
@@ -130,35 +90,30 @@
       <div class="cards">
 
         <div class="card">
-          <div class="card-icon">🤖</div>
+          <div class="icon">🤖</div>
           <h3>AI LAB</h3>
           <p>
-            Artificial intelligence,
-            automation and JARVIS experiments.
+            Experiments with artificial intelligence
+            and automation.
           </p>
-          <div class="card-status">● ONLINE</div>
         </div>
 
-
         <div class="card">
-          <div class="card-icon">🔐</div>
+          <div class="icon">🔐</div>
           <h3>CYBER LAB</h3>
           <p>
-            Cybersecurity learning and
-            safe digital experiments.
+            Learning cybersecurity through safe
+            practice projects.
           </p>
-          <div class="card-status">● SECURE</div>
         </div>
 
-
         <div class="card">
-          <div class="card-icon">⚡</div>
+          <div class="icon">⚡</div>
           <h3>FUTURE TECH</h3>
           <p>
-            Ideas, inventions and
-            technology experiments.
+            Ideas, inventions and technology
+            experiments.
           </p>
-          <div class="card-status">● ACTIVE</div>
         </div>
 
       </div>
@@ -169,86 +124,43 @@
     <!-- ABOUT -->
     <section id="about" class="section about">
 
-      <div class="section-label">
+      <div class="label">
         02 / ABOUT
       </div>
 
       <h2>THE LAB</h2>
 
       <p>
-        JARVIS LAB is a personal digital laboratory —
+        JARVIS LAB is my personal digital laboratory —
         a place to learn, build and experiment with
-        futuristic technology.
+        technology.
       </p>
-
-      <div class="terminal">
-        <span>&gt;</span> JARVIS SYSTEM INITIALIZED<br>
-        <span>&gt;</span> CORE ONLINE<br>
-        <span>&gt;</span> ALL SYSTEMS NOMINAL
-      </div>
 
     </section>
 
   </main>
 
 
-  <!-- BOTTOM HUD NAV -->
-  <nav class="bottom-nav">
-
-    <a href="#projects">
-      <span>◉</span>
-      PROJECTS
-    </a>
-
-    <a href="#projects">
-      <span>⬡</span>
-      EXPERIMENTS
-    </a>
-
-    <a href="#home">
-      <span>▣</span>
-      AI SYSTEM
-    </a>
-
-    <a href="#about">
-      <span>♙</span>
-      ABOUT
-    </a>
-
-  </nav>
-
-
   <!-- FOOTER -->
   <footer>
-    JARVIS LAB // SYSTEM ONLINE // V2.0.0
+    JARVIS LAB // SYSTEM ONLINE
   </footer>
 
 
-  <!-- JARVIS SCRIPT -->
+  <!-- BUTTON -->
   <script>
 
-    const enterBtn = document.getElementById("enterBtn");
+    document
+      .getElementById("enterBtn")
+      .addEventListener("click", function () {
 
-    enterBtn.addEventListener("click", function () {
+        document
+          .getElementById("projects")
+          .scrollIntoView({
+            behavior: "smooth"
+          });
 
-      document
-        .getElementById("projects")
-        .scrollIntoView({
-          behavior: "smooth"
-        });
-
-    });
-
-
-    // Reactor pulse effect
-    setInterval(() => {
-
-      const reactor =
-        document.querySelector(".reactor");
-
-      reactor.classList.toggle("pulse");
-
-    }, 1500);
+      });
 
   </script>
 
